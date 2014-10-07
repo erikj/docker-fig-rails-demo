@@ -1,5 +1,3 @@
-# TODO: web front-end, forward requests to :3000
-
 # https://github.com/dockerfile/nginx
 
 FROM dockerfile/nginx
