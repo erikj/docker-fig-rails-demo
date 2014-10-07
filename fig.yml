@@ -1,10 +1,11 @@
 # from http://www.fig.sh/rails.html
 
+# TODO: convert ports: to expose:
 db:
   image: postgres
   ports:
     - "5432"
-web:
+app:
   build: .
   command: bundle exec rackup -p 3000
   volumes:
@@ -13,3 +14,9 @@ web:
     - "3000:3000"
   links:
     - db
+web:
+  build: web
+  links:
+    - app
+  ports:
+    - '8080:80'
